@@ -174,6 +174,10 @@
   
   /* Grid
       ============================= */
+
+  .row {
+    display: flex;
+  }
   
   ul.row {
     margin: -1rem;
@@ -181,10 +185,6 @@
     list-style: none;
   }
   
-  .row {
-    display: flex;
-  }
-
   [class*='col-'] {
     margin: 1rem;
   }
@@ -200,7 +200,6 @@
   /* Navbar
       ============================= */
   
-  
   .nav {
     display: flex;
     margin: 0;
@@ -208,16 +207,14 @@
     list-style: none;
     text-align: center;
   }
- 
-
+  
   .nav .nav-item {
     font-family: var(--nav-item-font-family);
     font-weight: var(--nav-item-font-weight);
     font-size: var(--nav-item-font-size);
     letter-spacing: var(--nav-item-letter-spacing);
   }
- 
-
+  
   .nav .nav-item + .nav-item {
     margin: var(--nav-item-margin);
   }
@@ -256,7 +253,7 @@
     padding: var(--header-padding);
          position: relative;
          z-index: 3;
-         background: transparent;
+         background: transparent !important;
   }
 
   .header-container {
@@ -264,7 +261,6 @@
     justify-content: space-between;
     align-items: center;
   }
-  
   
   /* Footer
       ============================= */
@@ -357,18 +353,19 @@
   .section-hero .section-body {
     padding: 10rem 4rem;
   }
-  
+
   .section-hero .section-category {
     color: var(--color-white);
     text-transform: uppercase;
   }
-
+  
   .hero-homepage {
     background-position: 75% 0;
     background-repeat: no-repeat;
     background-size: 90rem auto;
     background-color: #010101;
   }
+
   .section-hero .section-title {
     margin-bottom: 5rem;
   }
@@ -380,21 +377,26 @@
     justify-content: center;
     min-height: 50vh;
   }
-
-  /* Section Latest news ============================= */
+  
+  /* Section Latest news
+    ============================= */
+  
   .section-latest-news .row {
     flex-direction: row-reverse;
   }
+
+  /* Section SERVICES
+    ============================= */
   
-  /* Section SERVICES ============================= */
   .section-services .row {
     flex-wrap: wrap;
   }
 
-  /* Section ABOUT US */
-
-  .section-about-us [class^="col-"] {
-    align-self: center
+  /* Section ABOUT US
+    ============================= */
+  
+  .section-about-us [class*='col-'] {
+    align-self: center;
   }
 
   /*** 4. CARD ***/
@@ -525,6 +527,10 @@
     z-index: -1;
   }
 
+  /*** ARTICLE PAGE ***/
+  /* Section HERO (article)
+    ============================= */
+
   .hero-article {
     background-size: 150rem 100rem;
     background-position: 50% 0;
@@ -573,23 +579,6 @@
     min-width: 20%;
   }
 
-  .post img {
-    width: 100%;
-    height: auto;
-  }
-
-  .post-content p:first-child {
-    font-size: var(--font-size-x-large);
-  }
-
-  .post-content .img-caption {
-    margin: 1rem 0;
-    padding: 0 .5rem;
-    font-size: var(--font-size-small);
-    color: var(--color-grey);
-    text-align: center;
-  }
-
   /* Post Meta
     ============================= */
 
@@ -604,20 +593,20 @@
     display: block;
   }
 
-  .post-meta-list [class^="post-meta"] {
+  .post-meta-list [class*="post-meta-"] {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     border-bottom: 0.2rem solid var(--color-light-grey);
   }
 
-
-  .post-meta-list [class^="post-meta"]:last-child {
+  .post-meta-list [class*="post-meta"]:last-child {
     border: none;
     margin-bottom: 3rem;
   }
 
-/* Tag list
+  /* Tag list
     ============================= */
+
   .tag-list {
     padding: 0;
     list-style: none;
@@ -635,3 +624,19 @@
     content: "";
   }
 
+  .post img {
+    width: 100%;
+    height: auto;
+  }
+
+  .post-content + p {
+    font-size: var(--font-size-x-large);
+  }
+
+  .post-content .img-caption {
+    margin: 1rem 0;
+    padding: 0 .5rem;
+    font-size: var(--font-size-small);
+    color: var(--color-grey);
+    text-align: center;
+  }
